@@ -18,6 +18,17 @@ python dscc_validator.py \<instance_name\> \<platform\> <br>
 There's some simple help information in the script that can be read running the script as follows: <br>
 python dscc_validator.py help
 
+#### Windows executable
+A Windows executable is provided for systems that don't have Python installed, the usage is the same as the Pyhton script, but you don't need to run the python command. <br>
+<br>
+dscc_validator.exe \<instance_name\> \<platform\> <br>
+<br>
+\<instance_name\> - (Mandatory) Defines the DSCC instance to be checked, current valid values are: us1, eu1, jp1 <br>
+\<platform\> - (Optional) Can be added to check for InfoSight connectivity, current options are: nimble, primera <br>
+<br>
+
+***Notice:*** This executable was created with PyInstaller and is not digitally signed; some antithreat programs might flag it as unsafe
+
 #### Troubleshooting
 The instructions show python as the command, but you should use the correct python command for your environment (python, python27, python3 for example)
 

@@ -1,2 +1,4 @@
 .vscode/
-dscc_validator.code-workspace
+dscc_validator.spec
+build/
+dist/
