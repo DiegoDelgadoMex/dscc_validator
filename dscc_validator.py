@@ -179,21 +179,21 @@ if(platform != "default"):
         "p2lg504047.it.hpe.com",
         "p2lg504048.it.hpe.com"]
 
-print()
-print("**************************************************************************")
-print("*         Checking communication to InfoSight from " + localip + "        *")
-print("**************************************************************************")
-print()
-# Test for InfoSight connectivity
-for url in urls:
-    dns_result_infogight = dns_check(url)
-    # Conditional to skip connectivity test if DSN resolution fails
-    if(dns_result_infogight == True):
-        if(url == "hogan.nimblestorage.com"):
-            port = 2222
-        else:
-            port = 443
-        port_d = port_check(url, port)
+    print()
+    print("**************************************************************************")
+    print("*         Checking communication to InfoSight from " + localip + "        *")
+    print("**************************************************************************")
+    print()
+    # Test for InfoSight connectivity
+    for url in urls:
+        dns_result_infogight = dns_check(url)
+        # Conditional to skip connectivity test if DSN resolution fails
+        if(dns_result_infogight == True):
+            if(url == "hogan.nimblestorage.com"):
+                port = 2222
+            else:
+                port = 443
+            port_d = port_check(url, port)
 
 
 
