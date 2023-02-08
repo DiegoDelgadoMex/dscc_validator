@@ -85,13 +85,16 @@ if(len(sys.argv) == 1):
     input_error = "quantity"
 elif(len(sys.argv) == 2):
     dscc_instance = sys.argv[1]
+    # Set dscc_instance to help just to print usage information
+    if(sys.argv[1] == "help"):
+        input_error = "quantity"
 elif(len(sys.argv) == 3):
     dscc_instance = sys.argv[1]
     platform = sys.argv[2]
 
 # Check if arguments are valid and set error type if applicable
 if(dscc_instance != "default"):
-    if(dscc_instance not in dscc_valid_instances):
+    if(dscc_instance not in dscc_valid_instances and dscc_instance != "help"):
         input_error = "invalid instance"
 
 if(platform != "default"):
@@ -102,10 +105,12 @@ if(platform != "default"):
 if(input_error != "none"):
     if(input_error == "quantity"):
         print()
-        print("Arguments missing....") 
+        if(dscc_instance != "help"):
+            print("Arguments missing....")
+        print() 
         print("Usage: dscc_validator.exe <instance_name> <platform>.")
-        print("Valid options for <instance_name> are 'us1', 'eu1', 'jp1'")
-        print("Valid options for <platform> are 'nimble' and 'primera'")
+        print("Mandatory argument: Valid options for <instance_name> are 'us1', 'eu1', 'jp1'")
+        print("Optional argument to check for InfoSight connectivity: Valid options for <platform> are 'nimble' and 'primera'")
         print("'nimble' applies for Nimble, Alletra 5000 and Alletra 6000")
         print("'primera' applies for Primera and Alletra 6000")
         print()
