@@ -4,7 +4,8 @@ This script is provided as-is and is meant to be used to check connectivity to D
 
 ### Requirements
 This script was built using Python 3.10.8, but it should work on other versions. <br>
-There are no dependendencies on external libraries.
+There are no dependendencies on external libraries. <br>
+The script should be executed on a system on the network that will be used for array management. 
 
 #### Basic usage:  
 python dscc_validator.py \<instance_name\> \<platform\> <br>
