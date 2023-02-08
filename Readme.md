@@ -8,8 +8,10 @@ There are no dependendencies on external libraries.
 
 #### Basic usage:  
 python3 dscc_validator.py \<instance_name\> \<platform\> <br>
+<br>
 \<instance_name\> - (Mandatory) Defines the DSCC instance to be checked, current valid values are: us1, eu1, jp1 <br>
 \<platform\> - (Optional) Can be added to check for InfoSight connectivity, current options are: nimble, primera <br>
-\* nimble: Used for Nimble, Alletra 5000 and Alletra 6000
-\* primera: Used for Primera and Alletra 9000
+<br>
+\* *nimble*: Used for Nimble, Alletra 5000 and Alletra 6000 <br>
+\* *primera*: Used for Primera and Alletra 9000 <br>
 
