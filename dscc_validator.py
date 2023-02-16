@@ -70,8 +70,10 @@ def port_check(url, port):
     return port_pass
 
 # Define valid arguments
+# Available DSCC instances
 dscc_valid_instances = ["us1", "eu1", "jp1"]
-platform_valid = ["nimble", "primera"]
+# Array type or service (BRS at the moment)
+platform_valid = ["nimble", "primera", "5000", "6000", "9000", "brs"]
 
 # Define default argument values 
 dscc_instance = "default"
@@ -110,9 +112,13 @@ if(input_error != "none"):
         print() 
         print("Usage: dscc_validator.exe <instance_name> <platform>.")
         print("Mandatory argument: Valid options for <instance_name> are 'us1', 'eu1', 'jp1'")
-        print("Optional argument to check for InfoSight connectivity: Valid options for <platform> are 'nimble' and 'primera'")
-        print("'nimble' applies for Nimble, Alletra 5000 and Alletra 6000")
-        print("'primera' applies for Primera and Alletra 6000")
+        print("Optional argument to check for InfoSight connectivity or Backup and Recovery Service connectivity: Valid options for <platform> are:")
+        print("'5000' applies for Alletra 5000")
+        print("'6000' applies for Alletra 6000")
+        print("'9000' applies for Alletra 9000")
+        print("'nimble' applies for Nimble")
+        print("'primera' applies for Primera")
+        print("'brs' applies for Backup and Recovery Service")
         print()
     if(input_error == "invalid instance"):
         print()
@@ -122,9 +128,13 @@ if(input_error != "none"):
     if(input_error == "invalid platform"):
         print()
         print("Invalid platform entered....")
-        print("Valid options for <platform> are 'nimble' and 'primera'")
-        print("'nimble' applies for Nimble, Alletra 5000 and Alletra 6000")
-        print("'primera' applies for Primera and Alletra 6000")
+        print("Valid options for <platform> are:")
+        print("'5000' applies for Alletra 5000")
+        print("'6000' applies for Alletra 6000")
+        print("'9000' applies for Alletra 9000")
+        print("'nimble' applies for Nimble")
+        print("'primera' applies for Primera")
+        print("'brs' applies for Backup and Recovery Service")
         print()
     
     sys.exit("Please try again...")
@@ -132,7 +142,11 @@ if(input_error != "none"):
 # Define URLs for DSCC
 device_url = "device.cloud.hpe.com"
 tunnel_url =  "tunnel-" + dscc_instance + ".data.cloud.hpe.com"
-urls = [device_url, tunnel_url]
+brs_do_url = "midway.ext.hpe.com"
+if(platform != "brs"):
+    urls = [device_url, tunnel_url]
+else:
+    urls = [tunnel_url, brs_do_url]
 port = 443
 
 localhostname = socket.gethostname()
@@ -159,15 +173,15 @@ for url in urls:
         port_d = port_check(url, port)
 
 # Define URLs for InfoSight
-if(platform != "default"):
-    if(platform == "nimble"):
+if(platform != "default" and platform != "brs"):
+    if(platform == "nimble" or platform == "5000" or platform == "6000"):
         urls = ["nsdiag.nimblestorage.com", 
             "update.nimblestorage.com", 
             "nsalerts.nimblestorage.com",
             "nsstats.nimblestorage.com", 
             "hogan.nimblestorage.com"]
         
-    elif(platform == "primera"):
+    elif(platform == "primera" or platform == "9000"):
         urls = ["p1lg501824.it.hpe.com",
         "p1lg501825.it.hpe.com",
         "p1lg501826.it.hpe.com",
