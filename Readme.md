@@ -43,7 +43,7 @@ dscc_validator.exe \<instance_name\> \<platform\> <br>
 *nimble*: Used for Nimble <br>
 *primera*: Used for Primera <br>
 *brs*: Used for Backup and Recovery Service <br>
-
+<br>
 ***Notice:*** This executable was created with PyInstaller and is not digitally signed; some antithreat programs might flag it as unsafe
 
 #### Troubleshooting
