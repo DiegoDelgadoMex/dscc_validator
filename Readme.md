@@ -34,7 +34,7 @@ A Windows executable is provided for systems that don't have Python installed, t
 dscc_validator.exe \<instance_name\> \<platform\> <br>
 <br>
 \<instance_name\> - (Mandatory) Defines the DSCC instance to be checked, current valid values are: us1, eu1, jp1 <br>
-\<platform\> - (Optional) This option is used to validate InfoSight connectivity for Block Storage platforms or to check connectivity to DSCC for additional services like Backup and Recovery Service. Available options are: <br>  
+\<platform\> - (Optional) This option is used to validate InfoSight connectivity for Block Storage platforms or to check connectivity to DSCC for additional services like Backup and Recovery Service. Available options are: 
 <br>
 
 *5000*: Used for Alletra 5000 <br>
