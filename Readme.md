@@ -37,7 +37,7 @@ dscc_validator.exe \<instance_name\> \<platform\> <br>
 \<platform\> - (Optional) This option is used to validate InfoSight connectivity for Block Storage platforms or to check connectivity to DSCC for additional services like Backup and Recovery Service. Available options are: <br>  
 
 <br>
-_5000_: Used for Alletra 5000 <br>
+*5000*: Used for Alletra 5000 <br>
 *6000*: Used for Alletra 6000 <br>
 *9000*: Used for Alletra 9000 <br>
 *nimble*: Used for Nimble <br>
