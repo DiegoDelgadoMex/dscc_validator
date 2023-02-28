@@ -73,7 +73,7 @@ def port_check(url, port):
 # Available DSCC instances
 dscc_valid_instances = ["us1", "eu1", "jp1"]
 # Array type or service (BRS at the moment)
-platform_valid = ["nimble", "primera", "5000", "6000", "9000", "brs"]
+platform_valid = ["nimble", "primera", "5000", "6000", "9000", "brs", "dr"]
 
 # Define default argument values 
 dscc_instance = "default"
@@ -119,6 +119,7 @@ if(input_error != "none"):
         print("'nimble' applies for Nimble")
         print("'primera' applies for Primera")
         print("'brs' applies for Backup and Recovery Service")
+        print("'dr' applies for Disaster Recovery")
         print()
     if(input_error == "invalid instance"):
         print()
@@ -135,6 +136,7 @@ if(input_error != "none"):
         print("'nimble' applies for Nimble")
         print("'primera' applies for Primera")
         print("'brs' applies for Backup and Recovery Service")
+        print("'dr' applies for Disaster Recovery")
         print()
     
     sys.exit("Please try again...")
@@ -144,9 +146,13 @@ device_url = "device.cloud.hpe.com"
 tunnel_url =  "tunnel-" + dscc_instance + ".data.cloud.hpe.com"
 brs_do_url = "midway.ext.hpe.com"
 if(platform != "brs"):
-    urls = [device_url, tunnel_url]
-else:
+    if(platform != "dr"):
+        urls = [device_url, tunnel_url]
+    else:
+        urls = [tunnel_url]
+elif(platform == "brs"):
     urls = [tunnel_url, brs_do_url]
+
 port = 443
 
 localhostname = socket.gethostname()

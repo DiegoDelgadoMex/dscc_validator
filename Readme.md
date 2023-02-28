@@ -5,6 +5,7 @@ This script is provided as-is and is meant to be used to check connectivity to D
 Currently the following checks are supported: <br>
 - Array connectivity for Alletra 5000, Alletra 6000, Alletra 9000, Nimble and Primera
 - Backup and Recovery Service
+- Disaster Recovery Service
 
 ### Requirements
 This script was built using Python 3.10.8, but it should work on other versions. <br>
@@ -15,7 +16,7 @@ The script should be executed on a system on the network that will be used for a
 python dscc_validator.py \<instance_name\> \<platform\> <br>
 <br>
 \<instance_name\> - (Mandatory) Defines the DSCC instance to be checked, current valid values are: us1, eu1, jp1 <br>
-\<platform\> - (Optional) This option is used to validate InfoSight connectivity for Block Storage platforms or to check connectivity to DSCC for additional services like Backup and Recovery Service. Available options are:   
+\<platform\> - (Optional) This option is used to validate InfoSight connectivity for Block Storage platforms or to check connectivity to DSCC for additional services like Backup and Recovery Service or Disaster Recovery Service. Available options are:   
 <br>
 
 *5000*: Used for Alletra 5000 <br>
@@ -24,6 +25,7 @@ python dscc_validator.py \<instance_name\> \<platform\> <br>
 *nimble*: Used for Nimble <br>
 *primera*: Used for Primera <br>
 *brs*: Used for Backup and Recovery Service <br>
+*dr*: Used for Disaster Recovery Service <br>
 <br>
 There's some simple help information in the script that can be read running the script as follows: <br>
 python dscc_validator.py help
@@ -34,7 +36,7 @@ A Windows executable is provided for systems that don't have Python installed, t
 dscc_validator.exe \<instance_name\> \<platform\> <br>
 <br>
 \<instance_name\> - (Mandatory) Defines the DSCC instance to be checked, current valid values are: us1, eu1, jp1 <br>
-\<platform\> - (Optional) This option is used to validate InfoSight connectivity for Block Storage platforms or to check connectivity to DSCC for additional services like Backup and Recovery Service. Available options are: 
+\<platform\> - (Optional) This option is used to validate InfoSight connectivity for Block Storage platforms or to check connectivity to DSCC for additional services like Backup and Recovery Service or Disaster Recovery Service. Available options are: 
 <br>
 
 *5000*: Used for Alletra 5000 <br>
@@ -43,6 +45,7 @@ dscc_validator.exe \<instance_name\> \<platform\> <br>
 *nimble*: Used for Nimble <br>
 *primera*: Used for Primera <br>
 *brs*: Used for Backup and Recovery Service <br>
+*dr*: Used for Disaster Recovery Service <br>
 <br>
 
 ***Notice:*** This executable was created with PyInstaller and is not digitally signed; some antithreat programs might flag it as unsafe
